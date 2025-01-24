@@ -1,2 +1,5 @@
 # Documentation
 *.docx
+
+#Mac files
+.DS_Store
