@@ -20,6 +20,7 @@
                 <a href="/">Home</a>
                 <a href="autoemoteca.html">Autoemoteca</a>
                 <a href="scuola.html">Scuola</a>
+                <a href="servizio-civile.html">Servizio Civile</a>
                 <a href="runts.html">RUNTS</a>
                 <a href="chi-siamo.html">Chi Siamo</a>
                 <a href="privacy.html">Privacy</a>
@@ -29,11 +30,164 @@
     </nav>
 
     <main class="main-content">
-        <h1>Calendario Donazioni 2024</h1>
+        <h1 style="text-align: center;">Calendario Donazioni 2025</h1>
         <div class="calendar-container">
-            <!-- Qui andrà il calendario delle donazioni -->
-            <p>Le date delle donazioni per il 2025 saranno pubblicate a breve...</p>
+            <div class="calendar-grid" id="donationCalendar">
+                <div class="calendar-month" data-month="1">
+                    <h3 class="month-name">Gennaio</h3>
+                    <p class="month-icon"><i class="fas fa-star event-icon" title="Inizio Anno"></i></p>
+                    <p class="donation-date">
+                        <i class="fas fa-droplet"></i>
+                        <span>Domenica 12</span>
+                    </p>
+                </div>
+                <div class="calendar-month" data-month="2">
+                    <h3 class="month-name">Febbraio</h3>
+                    <p class="month-icon"><i class="fas fa-heart event-icon" title="San Valentino"></i></p>
+                    <p class="donation-date">
+                        <i class="fas fa-droplet"></i>
+                        <span>Domenica 23</span>
+                    </p>
+                </div>
+                <div class="calendar-month" data-month="3">
+                    <h3 class="month-name">Marzo</h3>
+                    <p class="month-icon"><i class="fas fa-seedling event-icon" title="Primavera"></i></p>
+                    <p class="donation-date">
+                        <i class="fas fa-droplet"></i>
+                        <span>Sabato 22</span>
+                    </p>
+                </div>
+                <div class="calendar-month" data-month="4">
+                    <h3 class="month-name">Aprile</h3>
+                    <p class="month-icon"><i class="fas fa-egg event-icon" title="Pasqua"></i></p>
+                    <p class="donation-date">
+                        <i class="fas fa-droplet"></i>
+                        <span>Venerdì 11</span>
+                    </p>
+                </div>
+                <div class="calendar-month" data-month="5">
+                    <h3 class="month-name">Maggio</h3>
+                    <p class="month-icon"><i class="fas fa-sun event-icon" title="Bella Stagione"></i></p>
+                    <p class="donation-date">
+                        <i class="fas fa-droplet"></i>
+                        <span>Domenica 25</span>
+                    </p>
+                </div>
+                <div class="calendar-month" data-month="6">
+                    <h3 class="month-name">Giugno</h3>
+                    <p class="month-icon"><i class="fas fa-umbrella-beach event-icon" title="Estate"></i></p>
+                    <p class="donation-date">
+                        <i class="fas fa-droplet"></i>
+                        <span>Sabato 21</span>
+                    </p>
+                </div>
+                <div class="calendar-month" data-month="7">
+                    <h3 class="month-name">Luglio</h3>
+                    <p class="month-icon"><i class="fas fa-fire event-icon" title="Caldo Estivo"></i></p>
+                    <p class="donation-date">
+                        <i class="fas fa-droplet"></i>
+                        <span>Domenica 13</span>
+                    </p>
+                </div>
+                <div class="calendar-month" data-month="8">
+                    <h3 class="month-name">Agosto</h3>
+                    <p class="month-icon"><i class="fas fa-plane event-icon" title="Vacanze"></i></p>
+                    <p class="donation-date">
+                        <i class="fas fa-droplet"></i>
+                        <span>Venerdì 29</span>
+                    </p>
+                </div>
+                <div class="calendar-month" data-month="9">
+                    <h3 class="month-name">Settembre</h3>
+                    <p class="month-icon"><i class="fas fa-book event-icon" title="Rientro a Scuola"></i></p>
+                    <p class="donation-date">
+                        <i class="fas fa-droplet"></i>
+                        <span>Domenica 28</span>
+                    </p>
+                </div>
+                <div class="calendar-month" data-month="10">
+                    <h3 class="month-name">Ottobre</h3>
+                    <p class="month-icon"><i class="fas fa-leaf event-icon" title="Autunno"></i></p>
+                    <p class="donation-date">
+                        <i class="fas fa-droplet"></i>
+                        <span>Sabato 18</span>
+                    </p>
+                </div>
+                <div class="calendar-month" data-month="11">
+                    <h3 class="month-name">Novembre</h3>
+                    <p class="month-icon"><i class="fas fa-cloud-rain event-icon" title="Pioggia"></i></p>
+                    <p class="donation-date">
+                        <i class="fas fa-droplet"></i>
+                        <span>Domenica 30</span>
+                    </p>
+                </div>
+                <div class="calendar-month" data-month="12">
+                    <h3 class="month-name">Dicembre</h3>
+                    <p class="month-icon"><i class="fas fa-gift event-icon" title="Natale"></i></p>
+                    <p class="donation-date">
+                        <i class="fas fa-droplet"></i>
+                        <span>Lunedì 22</span>
+                    </p>
+                </div>
+            </div>
         </div>
+
+        <script>
+            function updateCalendar() {
+                const currentDate = new Date();
+                const currentYear = currentDate.getFullYear();
+                
+                // Solo se siamo nel 2025 controlliamo le date passate
+                if (currentYear === 2025) {
+                    const donationDates = {
+                        1: 12,  // Gennaio 12
+                        2: 23,  // Febbraio 23
+                        3: 22,  // Marzo 22
+                        4: 11,  // Aprile 11
+                        5: 25,  // Maggio 25
+                        6: 21,  // Giugno 21
+                        7: 13,  // Luglio 13
+                        8: 29,  // Agosto 29
+                        9: 28,  // Settembre 28
+                        10: 18, // Ottobre 18
+                        11: 30, // Novembre 30
+                        12: 22  // Dicembre 22
+                    };
+
+                    document.querySelectorAll('.calendar-month').forEach(month => {
+                        const monthNumber = parseInt(month.dataset.month);
+                        const donationDay = donationDates[monthNumber];
+                        
+                        // Crea la data della donazione per questo mese
+                        const donationDate = new Date(2025, monthNumber - 1, donationDay);
+                        
+                        // Se la data della donazione è passata, aggiungi la classe past
+                        if (donationDate < currentDate) {
+                            month.classList.add('past');
+                        } else {
+                            month.classList.remove('past');
+                        }
+                    });
+                }
+            }
+
+            // Aggiorna il calendario al caricamento della pagina
+            updateCalendar();
+
+            // Calcola il tempo fino alla prossima mezzanotte
+            function getTimeUntilMidnight() {
+                const now = new Date();
+                const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+                return tomorrow - now;
+            }
+
+            // Imposta il primo timer per la mezzanotte
+            setTimeout(() => {
+                updateCalendar();
+                // Dopo la prima esecuzione a mezzanotte, imposta un intervallo giornaliero
+                setInterval(updateCalendar, 24 * 60 * 60 * 1000);
+            }, getTimeUntilMidnight());
+        </script>
     </main>
 
     <footer>
@@ -55,7 +209,7 @@
                 </p>
                 <p><i class="fas fa-id-card"></i> Codice Fiscale: <a href="5x1000.html">92034030921</a></p>
                 <p><i class="fas fa-envelope"></i> Email: decimoputzu.comunale@avis.it</p>
-                <p><i class="fas fa-envelope"></i> PEC: decimoputzu.comunale@avis.it</p>
+                <p><i class="fas fa-envelope"></i> PEC: decimoputzu.comunale@pec.avis.it</p>
                 <p>
                     <i class="fab fa-whatsapp"></i> Tel. 
                     <a href="https://wa.me/393514364776" target="_blank" rel="noopener noreferrer">

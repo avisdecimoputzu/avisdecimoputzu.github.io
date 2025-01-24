@@ -1,6 +1,6 @@
 :root {
     --primary-red: #e53935;
-    --primary-blue: #00bcd4;
+    --primary-blue: #0098d4;
     --dark-bg: #121212;
     --darker-bg: #0a0a0a;
     --text-color: #ffffff;
@@ -123,6 +123,16 @@ nav {
 
 .cta-button:hover {
     background-color: var(--primary-blue);
+}
+
+.cta-button.secondary {
+    background: var(--darker-bg);
+    margin-top: 1rem;
+    border: 2px solid var(--primary-blue);
+}
+
+.cta-button.secondary:hover {
+    background: var(--primary-blue);
 }
 
 /* Main Content */
@@ -689,4 +699,218 @@ img {
 
 .runts-value a:hover {
     color: var(--primary-blue);
+}
+
+/* Calendar Styles */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.calendar-month {
+    background: var(--darker-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.calendar-month.past {
+    opacity: 0.5;
+}
+
+.calendar-month:hover {
+    transform: translateY(-5px);
+}
+
+.month-name {
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.month-icon {
+    text-align: center;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.month-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+}
+
+.donation-date {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+    border-top: 1px solid var(--primary-blue);
+    padding-top: 1rem;
+}
+
+.donation-date i {
+    color: var(--primary-red);
+}
+
+.donation-date .event-icon {
+    color: var(--primary-blue);
+}
+
+.booking-info {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.booking-info a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.booking-info a:hover {
+    text-decoration: underline;
+}
+
+/* School Page Styles */
+.school-links {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.drive-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--darker-bg);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid var(--primary-blue);
+    transition: all 0.3s ease;
+}
+
+.drive-link:hover {
+    background: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Service Civil Page Styles */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.benefit-item {
+    background: var(--darker-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-item i {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.benefit-item h3 {
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+}
+
+.activities-list {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.activities-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: var(--darker-bg);
+    border-radius: 5px;
+}
+
+.activities-list i {
+    color: var(--primary-blue);
+}
+
+.application-info {
+    background: var(--darker-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+}
+
+.application-info ol {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.application-info li {
+    margin-bottom: 0.5rem;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.scu-image-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.scu-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 } 
