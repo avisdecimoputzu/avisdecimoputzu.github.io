@@ -1079,38 +1079,40 @@ img {
     }
 }
 
-/* Miglioramenti per desktop */
-@media (min-width: 1024px) {
-    .hero-content {
-        max-width: 1000px;
-        margin: 0 auto;
-    }
+/* Desktop First Approach */
+.hero-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
+.hero-content h1 {
+    font-size: 4rem;
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.cta-button {
+    font-size: 1.2rem;
+    padding: 1.2rem 2.5rem;
+}
+
+.site-map-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+/* Tablet */
+@media screen and (max-width: 1023px) {
     .hero-content h1 {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     .hero-content p {
-        font-size: 1.4rem;
-        max-width: 800px;
-        margin: 0 auto 2rem;
-    }
-
-    .cta-button {
         font-size: 1.2rem;
-        padding: 1.2rem 2.5rem;
-    }
-
-    .site-map-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
-    }
-}
-
-/* Miglioramenti per tablet */
-@media (max-width: 1023px) and (min-width: 768px) {
-    .hero-content h1 {
-        font-size: 3rem;
     }
 
     .site-map-grid {
@@ -1119,8 +1121,8 @@ img {
     }
 }
 
-/* Miglioramenti per mobile */
-@media (max-width: 767px) {
+/* Mobile */
+@media screen and (max-width: 767px) {
     .nav-links {
         position: fixed;
         top: 60px;
@@ -1133,25 +1135,24 @@ img {
         justify-content: flex-start;
         padding-top: 2rem;
         transition: 0.3s;
+        display: none;
     }
 
     .nav-links.active {
         left: 0;
-    }
-
-    .hero-content {
-        padding: 1rem;
+        display: flex;
     }
 
     .hero-content h1 {
         font-size: 2.2rem;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
     }
 
     .hero-logo {
         width: 200px;
-        margin: 1rem auto;
     }
 
     .hero-logo-background {
@@ -1160,30 +1161,14 @@ img {
     }
 
     .cta-button {
-        display: block;
-        margin: 1rem auto;
         width: 90%;
         max-width: 300px;
-        text-align: center;
+        font-size: 1rem;
+        padding: 1rem;
     }
 
     .site-map-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0 1rem;
-    }
-
-    .site-map-item {
-        padding: 1.5rem;
-    }
-
-    .footer-content {
-        padding: 0 1rem;
-    }
-
-    .footer-contact p {
-        font-size: 0.9rem;
-        word-break: break-word;
     }
 }
 
