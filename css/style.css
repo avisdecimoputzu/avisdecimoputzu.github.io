@@ -1015,16 +1015,24 @@ img {
     color: var(--primary-blue);
 }
 
-.instagram-feed, .facebook-feed {
+.instagram-feed {
     width: 100%;
-    min-height: 700px;
+    min-height: 800px;
     overflow: hidden;
     border-radius: 5px;
     display: flex;
     justify-content: center;
+    background-color: white;
 }
 
-.instagram-media, .fb-page {
+.instagram-feed iframe {
+    width: 100% !important;
+    border: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+.fb-page {
     width: 100% !important;
     max-width: 500px !important;
     margin: 0 auto !important;
@@ -1076,6 +1084,15 @@ img {
 @media (max-width: 768px) {
     .social-feeds {
         grid-template-columns: 1fr;
+    }
+
+    .instagram-feed {
+        min-height: 600px;
+    }
+    
+    .instagram-feed iframe {
+        width: 100% !important;
+        height: 600px !important;
     }
 }
 
