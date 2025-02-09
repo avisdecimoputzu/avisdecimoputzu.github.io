@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scuola - Avis Decimoputzu</title>
+    <title>Bacheca Social - Avis Decimoputzu</title>
     <link rel="icon" type="image/png" href="images/avis_favicon.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -32,53 +32,57 @@
     </nav>
 
     <main class="main-content">
-        <h1 style="text-align: center;">Progetti Scuola</h1>
+        <h1 style="text-align: center;">Bacheca Social</h1>
 
-        <section class="content-section">
-            <h2 style="color: var(--primary-red); text-align: center;">I PROGETTI DELLA CLASSE 3^A</h2>
-            <p style="text-align: center; font-size: 1.2rem;">Anno Scolastico 2022/2023</p>
-            <p style="text-align: center; font-style: italic; font-size: 1.2rem;">Istituto Comprensivo Statale "A. Gramsci" Decimoputzu</p>
-            
-            <div class="school-links">
-                <p style="text-align: center;">Per visionare tutti i lavori, visita l'archivio su Google Drive:</p>
-                <a href="https://drive.google.com/drive/folders/17ULEq6mYe03U1UShXO-d-U415mHHQ_8T?usp=share_link" 
-                   class="drive-link" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-google-drive"></i> Progetti 3^A
+        <div class="social-feeds">
+            <!-- Feed Instagram -->
+            <section class="feed-section">
+                <h2><i class="fab fa-instagram"></i> Instagram</h2>
+                <div class="instagram-feed">
+                    <script async src="https://www.instagram.com/embed.js"></script>
+                    <blockquote 
+                        class="instagram-media" 
+                        data-instgrm-captioned 
+                        data-instgrm-permalink="https://www.instagram.com/p/C4kWvkWt0Hs/"
+                        data-instgrm-version="14">
+                        <a href="https://www.instagram.com/p/C4kWvkWt0Hs/"></a>
+                    </blockquote>
+                </div>
+            </section>
+
+            <!-- Feed Facebook -->
+            <section class="feed-section">
+                <h2><i class="fab fa-facebook"></i> Facebook</h2>
+                <div class="facebook-feed">
+                    <div class="fb-page" 
+                         data-href="https://www.facebook.com/aviscomunaledecimoputzu"
+                         data-tabs="timeline" 
+                         data-width="500"
+                         data-height="700"
+                         data-small-header="false" 
+                         data-adapt-container-width="true" 
+                         data-hide-cover="false" 
+                         data-show-facepile="false"
+                         data-show-posts="true">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="social-links">
+            <h3>Seguici sui social</h3>
+            <div class="social-buttons">
+                <a href="https://www.instagram.com/avisdecimoputzu/" class="social-button instagram" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://www.facebook.com/aviscomunaledecimoputzu" class="social-button facebook" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                <a href="https://www.threads.net/@avisdecimoputzu" class="social-button threads" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-threads"></i> Threads
                 </a>
             </div>
-
-            <div class="gallery">
-                <!-- Immagini della 3^A -->
-                <img src="images/scuola/3a-1.jpg" alt="Progetto 3A" loading="lazy">
-                <img src="images/scuola/3a-2.jpg" alt="Progetto 3A" loading="lazy">
-                <img src="images/scuola/3a-3.jpg" alt="Progetto 3A" loading="lazy">
-                <img src="images/scuola/3a-4.jpg" alt="Progetto 3A" loading="lazy">
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2 style="color: var(--primary-red); text-align: center;">I PROGETTI DELLA CLASSE 3^B</h2>
-            <p style="text-align: center; font-size: 1.2rem;">Anno Scolastico 2022/2023</p>
-            <p style="text-align: center; font-style: italic; font-size: 1.2rem;">Istituto Comprensivo Statale "A. Gramsci" Decimoputzu</p>
-            
-            <div class="school-links">
-                <p style="text-align: center;">Per visionare tutti i lavori, visita l'archivio su Google Drive:</p>
-                <a href="https://drive.google.com/drive/folders/1rJ-mGO3gacwdNMSkbk1MQSOoQrcjyndJ?usp=share_link" 
-                   class="drive-link" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-google-drive"></i> Progetti 3^B
-                </a>
-            </div>
-
-            <div class="gallery">
-                <!-- Immagini della 3^B -->
-                <img src="images/scuola/3b-1.jpg" alt="Progetto 3B" loading="lazy">
-                <img src="images/scuola/3b-2.jpg" alt="Progetto 3B" loading="lazy">
-                <img src="images/scuola/3b-3.jpg" alt="Progetto 3B" loading="lazy">
-                <img src="images/scuola/3b-4.jpg" alt="Progetto 3B" loading="lazy">
-                <img src="images/scuola/3b-5.jpg" alt="Progetto 3B" loading="lazy">
-                <img src="images/scuola/3b-6.jpg" alt="Progetto 3B" loading="lazy">
-            </div>
-        </section>
+        </div>
     </main>
 
     <footer>
@@ -121,6 +125,21 @@
             </div>
         </div>
     </footer>
+
+    <!-- Script Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v18.0">
+    </script>
+
+    <!-- Script Instagram Feed -->
+    <script src="js/instagram-feed.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const instagramFeed = new InstagramFeed();
+            instagramFeed.startChecking();
+        });
+    </script>
 
     <script>
         const hamburger = document.querySelector('.hamburger');

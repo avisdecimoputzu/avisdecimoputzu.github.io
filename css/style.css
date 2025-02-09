@@ -37,13 +37,20 @@ nav {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 2px;
+    border-radius: 5px;
     background: linear-gradient(45deg, var(--primary-red), var(--primary-blue));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+    background: var(--darker-bg);
+    padding: 1px;
+    border-radius: 3px;
 }
 
 .nav-links {
@@ -86,13 +93,43 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/hero-bg.jpg');
+    background: 
+        linear-gradient(
+            rgba(0,0,0,0.8),
+            rgba(0,0,0,0.8)
+        ),
+        linear-gradient(
+            45deg,
+            rgba(229, 57, 53, 0.3),
+            rgba(0, 152, 212, 0.3)
+        ),
+        url('../images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     padding-top: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(
+        45deg,
+        rgba(229, 57, 53, 0.2),
+        rgba(0, 152, 212, 0.2)
+    );
+    filter: blur(50px);
+    z-index: 1;
 }
 
 .hero-content {
+    position: relative;
+    z-index: 2;
     max-width: 800px;
     padding: 2rem;
 }
@@ -104,6 +141,37 @@ nav {
     background-clip: text;
     color: transparent;
     margin-bottom: 1rem;
+}
+
+.hero-logo {
+    margin: 1rem auto 2rem;
+    display: block;
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    position: relative;
+    z-index: 3;
+}
+
+.hero-logo-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    z-index: 2;
+}
+
+.hero-logo img {
+    height: 100%;
+    width: auto;
+    background: var(--darker-bg);
+    padding: 1px;
+    border-radius: 3px;
 }
 
 .hero-content p {
@@ -257,7 +325,7 @@ footer {
     }
 
     .logo {
-        font-size: 1.2rem;
+        height: 45px;
     }
 
     /* Hero Section */
@@ -314,6 +382,16 @@ footer {
     .footer-contact p a {
         display: inline-block;
         margin-top: 0.25rem;
+    }
+
+    .hero-logo {
+        width: 250px;
+        height: auto;
+    }
+
+    .hero-logo-background {
+        width: 270px;
+        height: 150px;
     }
 }
 
@@ -913,4 +991,90 @@ img {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Social Feed Styles */
+.social-feeds {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.feed-section {
+    background: var(--darker-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.feed-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-blue);
+}
+
+.instagram-feed, .facebook-feed {
+    width: 100%;
+    min-height: 700px;
+    overflow: hidden;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.instagram-media, .fb-page {
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+}
+
+.social-links {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.social-links h3 {
+    margin-bottom: 1.5rem;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.social-button:hover {
+    transform: translateY(-2px);
+}
+
+.social-button.instagram {
+    background: #e4405f;
+}
+
+.social-button.facebook {
+    background: #1877f2;
+}
+
+.social-button.threads {
+    background: #000000;
+}
+
+@media (max-width: 768px) {
+    .social-feeds {
+        grid-template-columns: 1fr;
+    }
 } 
