@@ -139,8 +139,8 @@
                 const currentDate = new Date();
                 const currentYear = currentDate.getFullYear();
                 
-                // Solo se siamo nel 2025 controlliamo le date passate
-                if (currentYear === 2025) {
+                // Solo se siamo nel 2026 - currentYear === 2026 controlliamo le date passate
+                if (currentYear === 2026) {
                     const donationDates = {
                         1: 18,  // Gennaio 18
                         2: 27,  // Febbraio 27
@@ -161,7 +161,7 @@
                         const donationDay = donationDates[monthNumber];
                         
                         // Crea la data della donazione per questo mese
-                        const donationDate = new Date(2025, monthNumber - 1, donationDay);
+                        const donationDate = new Date(2026, monthNumber - 1, donationDay);
                         
                         // Se la data della donazione è passata, aggiungi la classe past
                         if (donationDate < currentDate) {
