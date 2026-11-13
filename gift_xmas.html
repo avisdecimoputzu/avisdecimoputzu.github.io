@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grazie per la tua Stella di Natale - Avis Decimoputzu</title>
+    <meta name="description"
+        content="Grazie per aver acquistato la Stella di Natale AVIS! Scarica il tuo sfondo natalizio personalizzato per desktop o cellulare.">
+    <link rel="icon" type="image/png" href="images/avis_favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --xmas-gold: #f5c86b;
+            --xmas-green: #2e7d32;
+        }
+
+        /* ===== Neve ===== */
+        .snow-layer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 999;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -2rem;
+            color: rgba(255, 255, 255, 0.85);
+            user-select: none;
+            animation-name: snow-fall;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes snow-fall {
+            0% {
+                transform: translate(0, -2rem) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(1.5rem, 50vh) rotate(180deg);
+            }
+
+            100% {
+                transform: translate(-1rem, 105vh) rotate(360deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .snow-layer {
+                display: none;
+            }
+        }
+
+        /* ===== Intestazione ===== */
+        .xmas-hero {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .xmas-hero .xmas-star {
+            font-size: 2.5rem;
+            color: var(--xmas-gold);
+            filter: drop-shadow(0 0 12px rgba(245, 200, 107, 0.7));
+            animation: star-glow 2.5s ease-in-out infinite;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes star-glow {
+
+            0%,
+            100% {
+                transform: scale(1) rotate(0deg);
+                filter: drop-shadow(0 0 8px rgba(245, 200, 107, 0.5));
+            }
+
+            50% {
+                transform: scale(1.12) rotate(8deg);
+                filter: drop-shadow(0 0 18px rgba(245, 200, 107, 0.9));
+            }
+        }
+
+        .xmas-hero h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .xmas-hero .xmas-subtitle {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2rem;
+            color: var(--xmas-gold);
+            margin-bottom: 0;
+        }
+
+        /* Lucine natalizie */
+        .xmas-lights {
+            display: flex;
+            justify-content: center;
+            gap: 1.4rem;
+            list-style: none;
+            margin: 1.5rem auto 2rem;
+            padding: 0;
+            position: relative;
+            max-width: 700px;
+        }
+
+        .xmas-lights::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #3b3b3b;
+            border-radius: 2px;
+        }
+
+        .xmas-lights li {
+            width: 12px;
+            height: 22px;
+            border-radius: 50%;
+            margin-top: 6px;
+            position: relative;
+            animation: light-blink 1.6s ease-in-out infinite;
+        }
+
+        .xmas-lights li::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 2px;
+            width: 8px;
+            height: 7px;
+            background: #444;
+            border-radius: 2px;
+        }
+
+        .xmas-lights li:nth-child(4n+1) {
+            background: var(--primary-red);
+            box-shadow: 0 4px 18px var(--primary-red);
+        }
+
+        .xmas-lights li:nth-child(4n+2) {
+            background: var(--xmas-gold);
+            box-shadow: 0 4px 18px var(--xmas-gold);
+            animation-delay: 0.4s;
+        }
+
+        .xmas-lights li:nth-child(4n+3) {
+            background: var(--primary-blue);
+            box-shadow: 0 4px 18px var(--primary-blue);
+            animation-delay: 0.8s;
+        }
+
+        .xmas-lights li:nth-child(4n+4) {
+            background: #43a047;
+            box-shadow: 0 4px 18px #43a047;
+            animation-delay: 1.2s;
+        }
+
+        @keyframes light-blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.35;
+                box-shadow: none;
+            }
+        }
+
+        /* ===== Card messaggio ===== */
+        .thanks-card {
+            background-color: var(--darker-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            border-top: 4px solid var(--primary-red);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .thanks-card::after {
+            content: '\f005';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: -1.5rem;
+            bottom: -2rem;
+            font-size: 9rem;
+            color: rgba(245, 200, 107, 0.06);
+            pointer-events: none;
+        }
+
+        .thanks-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== Generatore sfondo ===== */
+        .gift-wrapper {
+            display: grid;
+            grid-template-columns: minmax(280px, 380px) 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .gift-controls {
+            background-color: var(--darker-bg);
+            border-radius: 10px;
+            padding: 1.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .gift-controls h3 {
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .gift-controls h3 i {
+            color: var(--primary-red);
+        }
+
+        .gift-field {
+            margin-bottom: 1.5rem;
+        }
+
+        .gift-field label,
+        .gift-field .field-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #ddd;
+        }
+
+        .gift-field input[type="text"] {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border-radius: 6px;
+            border: 2px solid #333;
+            background: #1c1c1c;
+            color: var(--text-color);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gift-field input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 152, 212, 0.25);
+        }
+
+        .char-counter {
+            display: block;
+            text-align: right;
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 0.35rem;
+        }
+
+        .format-toggle {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .format-toggle input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .format-toggle label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 1rem 0.5rem;
+            border-radius: 8px;
+            border: 2px solid #333;
+            background: #1c1c1c;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .format-toggle label i {
+            font-size: 1.6rem;
+            color: #aaa;
+            transition: color 0.3s ease;
+        }
+
+        .format-toggle label small {
+            color: #888;
+            font-size: 0.75rem;
+        }
+
+        .format-toggle input:checked+label {
+            border-color: var(--primary-red);
+            background: rgba(229, 57, 53, 0.12);
+        }
+
+        .format-toggle input:checked+label i {
+            color: var(--xmas-gold);
+        }
+
+        .format-toggle input:focus-visible+label {
+            box-shadow: 0 0 0 3px rgba(0, 152, 212, 0.4);
+        }
+
+        .download-btn {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+
+        .download-btn:disabled {
+            background-color: #444;
+            color: #999;
+            cursor: not-allowed;
+        }
+
+        .gift-hint {
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 1rem;
+            margin-bottom: 0 !important;
+        }
+
+        .gift-hint i {
+            color: var(--primary-blue);
+        }
+
+        .gift-preview {
+            background-color: var(--darker-bg);
+            border-radius: 10px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .gift-preview .preview-title {
+            align-self: flex-start;
+            font-weight: 600;
+            color: #ddd;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .gift-preview .preview-title i {
+            color: var(--xmas-gold);
+        }
+
+        .preview-frame {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #wallpaperCanvas {
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+            background: #0d1726;
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+        }
+
+        .preview-frame.is-mobile #wallpaperCanvas {
+            width: auto;
+            max-height: 70vh;
+            border-radius: 22px;
+            border: 6px solid #222;
+        }
+
+        .preview-loading {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: #bbb;
+        }
+
+        .preview-loading[hidden] {
+            display: none;
+        }
+
+        .gift-error {
+            color: #ff8a80;
+            font-size: 0.9rem;
+            margin-top: 0.75rem;
+        }
+
+        @media (max-width: 900px) {
+            .gift-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .xmas-hero .xmas-subtitle {
+                font-size: 1.8rem;
+            }
+
+            .xmas-lights {
+                gap: 0.9rem;
+            }
+
+            .xmas-lights li:nth-child(n+13) {
+                display: none;
+            }
+
+            .thanks-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="snow-layer" id="snowLayer" aria-hidden="true"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="images/logo_avis_sito.png" alt="Logo Avis Decimoputzu">
+            </a>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="autoemoteca.html">Autoemoteca</a>
+                <a href="scuola.html">Scuola</a>
+                <a href="servizio-civile.html">Servizio Civile</a>
+                <a href="runts.html">RUNTS</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="bacheca.html">Bacheca</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="xmas-hero">
+            <span class="xmas-star"><i class="fas fa-star"></i></span>
+            <h1>Grazie per la tua Stella di Natale!</h1>
+            <p class="xmas-subtitle">Buone Feste da Avis Decimoputzu</p>
+        </div>
+
+        <ul class="xmas-lights" aria-hidden="true">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <section class="content-section">
+            <div class="thanks-card">
+                <h2><i class="fas fa-heart" style="color: var(--primary-red);"></i> Un gesto che fa la differenza</h2>
+                <p>
+                    Acquistando la <strong>Stella di Natale AVIS</strong> hai sostenuto concretamente la nostra
+                    associazione e la promozione della donazione di sangue ed emocomponenti nel nostro territorio.
+                    Ogni stella è una piccola luce di solidarietà: grazie di cuore per averla accesa insieme a noi!
+                </p>
+                <p>
+                    Per ringraziarti abbiamo preparato per te un <strong>regalo</strong>: uno sfondo natalizio
+                    personalizzato con il tuo nome, da scaricare gratuitamente per il computer o per lo smartphone.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><i class="fas fa-gift" style="color: var(--primary-red);"></i> Crea il tuo sfondo personalizzato</h2>
+
+            <div class="gift-wrapper">
+                <form class="gift-controls" id="giftForm" autocomplete="off" novalidate>
+                    <h3><i class="fas fa-wand-magic-sparkles"></i> Personalizza</h3>
+
+                    <div class="gift-field">
+                        <label for="giftName">Il tuo nome</label>
+                        <input type="text" id="giftName" name="giftName" maxlength="24" placeholder="Es. Maria"
+                            aria-describedby="charCounter">
+                        <span class="char-counter" id="charCounter">0/24</span>
+                    </div>
+
+                    <div class="gift-field">
+                        <span class="field-label">Formato</span>
+                        <div class="format-toggle" role="radiogroup" aria-label="Formato sfondo">
+                            <input type="radio" name="format" id="formatDesktop" value="desktop" checked>
+                            <label for="formatDesktop">
+                                <i class="fas fa-desktop"></i>
+                                Desktop
+                                <small>2752 × 1536</small>
+                            </label>
+                            <input type="radio" name="format" id="formatMobile" value="mobile">
+                            <label for="formatMobile">
+                                <i class="fas fa-mobile-screen-button"></i>
+                                Cellulare
+                                <small>1536 × 2752</small>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="cta-button download-btn" id="downloadBtn" disabled>
+                        <i class="fas fa-download"></i> Scarica lo sfondo
+                    </button>
+
+                    <p class="gift-hint">
+                        <i class="fas fa-circle-info"></i>
+                        Inserisci il tuo nome per attivare il download. Sullo smartphone, se l'immagine si apre in
+                        una nuova scheda, tieni premuto su di essa e scegli “Salva immagine”.
+                    </p>
+                    <p class="gift-error" id="giftError" hidden></p>
+                </form>
+
+                <div class="gift-preview">
+                    <span class="preview-title"><i class="fas fa-eye"></i> Anteprima</span>
+                    <div class="preview-frame" id="previewFrame">
+                        <canvas id="wallpaperCanvas" width="2752" height="1536"
+                            aria-label="Anteprima dello sfondo personalizzato"></canvas>
+                        <div class="preview-loading" id="previewLoading">
+                            <i class="fas fa-snowflake fa-spin"></i> Caricamento…
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>© 2023-2026 Avis Comunale Decimoputzu Odv. Tutti i diritti riservati.</p>
+                <p>Sito web sviluppato da
+                    <a href="https://github.com/emmanueleP" class="developer-credit" target="_blank"
+                        rel="noopener noreferrer">
+                        Emmanuele Pani <i class="fab fa-github"></i>
+                    </a>
+                </p>
+            </div>
+            <div class="footer-contact">
+                <p>
+                    <i class="fas fa-location-dot"></i>
+                    <a href="https://maps.google.com/?q=Via+San+Francesco+1,+09010+Decimoputzu+SU" target="_blank"
+                        rel="noopener noreferrer">
+                        Via San Francesco 1 - 09001 Decimoputzu (CA)
+                    </a>
+                </p>
+                <p><i class="fas fa-id-card"></i> Codice Fiscale: <a href="5x1000.html">92034030921</a></p>
+                <p><i class="fas fa-envelope"></i> Email: decimoputzu.comunale@avis.it</p>
+                <p><i class="fas fa-envelope"></i> PEC: decimoputzu.comunale@pec.avis.it</p>
+                <p>
+                    <i class="fab fa-whatsapp"></i> Tel.
+                    <a href="https://wa.me/393514364776" target="_blank" rel="noopener noreferrer">
+                        3514364776
+                    </a>
+                </p>
+                <div class="footer-social">
+                    <a href="https://facebook.com/aviscomunaledecimoputzu" class="facebook" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://instagram.com/avisdecimoputzu" class="instagram" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.threads.net/@avisdecimoputzu" class="threads" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-threads"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== Menu hamburger =====
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // ===== Neve =====
+        (function createSnow() {
+            const layer = document.getElementById('snowLayer');
+            if (!layer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            const count = window.innerWidth < 768 ? 22 : 45;
+            const glyphs = ['❄', '❅', '❆', '•'];
+            for (let i = 0; i < count; i++) {
+                const flake = document.createElement('span');
+                flake.className = 'snowflake';
+                flake.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
+                flake.style.left = Math.random() * 100 + 'vw';
+                flake.style.fontSize = (0.5 + Math.random() * 1.1) + 'rem';
+                flake.style.opacity = (0.3 + Math.random() * 0.6).toFixed(2);
+                flake.style.animationDuration = (9 + Math.random() * 12) + 's';
+                flake.style.animationDelay = (-Math.random() * 20) + 's';
+                layer.appendChild(flake);
+            }
+        })();
+
+        // ===== Generatore sfondo =====
+        (function wallpaperGenerator() {
+            const SCRIPT_FONT = '"Great Vibes", "Brush Script MT", cursive';
+            const SANS_FONT = '"Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif';
+
+            // Posizione del testo (valori relativi alla dimensione dell'immagine),
+            // scelti per cadere nelle zone scure e "libere" di ciascuno sfondo.
+            const FORMATS = {
+                desktop: {
+                    src: 'images/sfondo_desktop_thank_you_avis.jpeg',
+                    width: 2752,
+                    height: 1536,
+                    centerX: 0.735,  // cielo stellato a destra della finestra
+                    topY: 0.23,
+                    maxWidth: 0.21,
+                    unit: 1536       // riferimento per le dimensioni dei font
+                },
+                mobile: {
+                    src: 'images/sfondo_mobile_thank_you_avis.jpeg',
+                    width: 1536,
+                    height: 2752,
+                    centerX: 0.5,    // fascia scura sotto il davanzale
+                    topY: 0.67,
+                    maxWidth: 0.84,
+                    unit: 1900
+                }
+            };
+
+            const canvas = document.getElementById('wallpaperCanvas');
+            const ctx = canvas.getContext('2d');
+            const nameInput = document.getElementById('giftName');
+            const counter = document.getElementById('charCounter');
+            const form = document.getElementById('giftForm');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const loading = document.getElementById('previewLoading');
+            const previewFrame = document.getElementById('previewFrame');
+            const errorBox = document.getElementById('giftError');
+
+            const images = {};
+            let currentFormat = 'desktop';
+
+            function loadImage(key) {
+                if (images[key]) return images[key];
+                images[key] = new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = () => resolve(img);
+                    img.onerror = () => reject(new Error('Impossibile caricare ' + FORMATS[key].src));
+                    img.src = FORMATS[key].src;
+                });
+                return images[key];
+            }
+
+            function getName() {
+                return nameInput.value.replace(/\s+/g, ' ').trim();
+            }
+
+            // Riduce la dimensione del font finché il testo non rientra in maxWidth
+            function fitFont(text, size, family, weight, maxWidth) {
+                let s = size;
+                do {
+                    ctx.font = `${weight} ${s}px ${family}`;
+                    if (ctx.measureText(text).width <= maxWidth) break;
+                    s -= 2;
+                } while (s > 12);
+                return s;
+            }
+
+            // Divide un testo su più righe in base alla larghezza disponibile
+            function wrapText(text, maxWidth) {
+                const words = text.split(' ');
+                const lines = [];
+                let line = '';
+                words.forEach(word => {
+                    const test = line ? line + ' ' + word : word;
+                    if (ctx.measureText(test).width > maxWidth && line) {
+                        lines.push(line);
+                        line = word;
+                    } else {
+                        line = test;
+                    }
+                });
+                if (line) lines.push(line);
+                return lines;
+            }
+
+            function drawSparkle(x, y, r) {
+                ctx.save();
+                ctx.translate(x, y);
+                ctx.beginPath();
+                for (let i = 0; i < 8; i++) {
+                    const radius = i % 2 === 0 ? r : r * 0.28;
+                    const angle = (Math.PI / 4) * i - Math.PI / 2;
+                    ctx.lineTo(Math.cos(angle) * radius, Math.sin(angle) * radius);
+                }
+                ctx.closePath();
+                ctx.fillStyle = '#ffe9b0';
+                ctx.shadowColor = 'rgba(255, 210, 120, 0.9)';
+                ctx.shadowBlur = r * 1.5;
+                ctx.fill();
+                ctx.restore();
+            }
+
+            function draw(img) {
+                const cfg = FORMATS[currentFormat];
+                const W = cfg.width;
+                const H = cfg.height;
+                const u = cfg.unit / 1000;   // fattore di scala
+                const name = getName();
+                const cx = W * cfg.centerX;
+                const maxW = W * cfg.maxWidth;
+
+                canvas.width = W;
+                canvas.height = H;
+                ctx.clearRect(0, 0, W, H);
+                ctx.drawImage(img, 0, 0, W, H);
+
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'alphabetic';
+
+                let y = H * cfg.topY;
+
+                // Riga 1: "Grazie di cuore"
+                const s1 = fitFont('GRAZIE DI CUORE', 30 * u, SANS_FONT, 700, maxW);
+                ctx.save();
+                if ('letterSpacing' in ctx) ctx.letterSpacing = `${6 * u}px`;
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.92)';
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.75)';
+                ctx.shadowBlur = 12 * u;
+                ctx.fillText('GRAZIE DI CUORE', cx, y);
+                ctx.restore();
+
+                // Riga 2: nome (corsivo dorato)
+                const displayName = name || 'Il tuo nome';
+                y += 105 * u;
+                const s2 = fitFont(displayName, 115 * u, SCRIPT_FONT, 400, maxW);
+                ctx.save();
+                ctx.font = `400 ${s2}px ${SCRIPT_FONT}`;
+                const grad = ctx.createLinearGradient(0, y - s2 * 0.8, 0, y + s2 * 0.2);
+                grad.addColorStop(0, '#fff3c4');
+                grad.addColorStop(0.5, '#f5c86b');
+                grad.addColorStop(1, '#d99a2b');
+                ctx.fillStyle = grad;
+                ctx.globalAlpha = name ? 1 : 0.45;
+                ctx.shadowColor = 'rgba(255, 190, 90, 0.55)';
+                ctx.shadowBlur = 28 * u;
+                ctx.fillText(displayName, cx, y);
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.6)';
+                ctx.shadowBlur = 8 * u;
+                ctx.shadowOffsetY = 3 * u;
+                ctx.fillText(displayName, cx, y);
+                ctx.restore();
+
+                // Stelline ai lati del nome
+                if (name) {
+                    ctx.font = `400 ${s2}px ${SCRIPT_FONT}`;
+                    const nameW = Math.min(ctx.measureText(displayName).width, maxW);
+                    const off = nameW / 2 + 28 * u;
+                    drawSparkle(cx - off, y - s2 * 0.45, 13 * u);
+                    drawSparkle(cx + off, y - s2 * 0.6, 9 * u);
+                }
+
+                // Linea decorativa
+                y += 40 * u;
+                ctx.save();
+                const lineW = Math.min(maxW * 0.6, 260 * u);
+                const lg = ctx.createLinearGradient(cx - lineW / 2, 0, cx + lineW / 2, 0);
+                lg.addColorStop(0, 'rgba(245, 200, 107, 0)');
+                lg.addColorStop(0.5, 'rgba(245, 200, 107, 0.9)');
+                lg.addColorStop(1, 'rgba(245, 200, 107, 0)');
+                ctx.strokeStyle = lg;
+                ctx.lineWidth = 2.5 * u;
+                ctx.beginPath();
+                ctx.moveTo(cx - lineW / 2, y);
+                ctx.lineTo(cx + lineW / 2, y);
+                ctx.stroke();
+                ctx.restore();
+                drawSparkle(cx, y, 9 * u);
+
+                // Riga 3: messaggio
+                y += 55 * u;
+                ctx.save();
+                const s3 = 30 * u;
+                ctx.font = `500 ${s3}px ${SANS_FONT}`;
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.85)';
+                ctx.shadowBlur = 10 * u;
+                const msg = 'per aver acceso con noi una Stella di Natale AVIS';
+                const lines = wrapText(msg, maxW);
+                lines.forEach((l, i) => ctx.fillText(l, cx, y + i * s3 * 1.35));
+                y += (lines.length - 1) * s3 * 1.35;
+                ctx.restore();
+
+                // Riga 4: firma
+                y += 62 * u;
+                ctx.save();
+                const s4 = fitFont('Buon Natale · I volontari Avis Decimoputzu', 26 * u, SANS_FONT, 700, maxW);
+                ctx.fillStyle = '#f5c86b';
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.85)';
+                ctx.shadowBlur = 10 * u;
+                ctx.fillText('Buon Natale · I volontari Avis Decimoputzu', cx, y);
+                ctx.restore();
+            }
+
+            async function render() {
+                errorBox.hidden = true;
+                previewFrame.classList.toggle('is-mobile', currentFormat === 'mobile');
+                loading.hidden = false;
+                try {
+                    const img = await loadImage(currentFormat);
+                    draw(img);
+                } catch (err) {
+                    errorBox.textContent = 'Si è verificato un problema nel caricamento dello sfondo. Riprova più tardi.';
+                    errorBox.hidden = false;
+                    console.error(err);
+                } finally {
+                    loading.hidden = true;
+                }
+            }
+
+            function updateState() {
+                const len = nameInput.value.length;
+                counter.textContent = `${len}/${nameInput.maxLength}`;
+                downloadBtn.disabled = getName().length === 0;
+            }
+
+            function slugify(text) {
+                return text
+                    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                    .replace(/[^a-zA-Z0-9]+/g, '_')
+                    .replace(/^_+|_+$/g, '')
+                    .toLowerCase() || 'avis';
+            }
+
+            function download() {
+                const name = getName();
+                if (!name) return;
+                const fileName = `sfondo_${currentFormat}_natale_avis_${slugify(name)}.jpg`;
+                try {
+                    canvas.toBlob(blob => {
+                        if (!blob) {
+                            errorBox.textContent = 'Non è stato possibile generare il file. Prova con un altro browser.';
+                            errorBox.hidden = false;
+                            return;
+                        }
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = fileName;
+                        document.body.appendChild(a);
+                        a.click();
+                        a.remove();
+                        setTimeout(() => URL.revokeObjectURL(url), 4000);
+                    }, 'image/jpeg', 0.93);
+                } catch (err) {
+                    errorBox.textContent = 'Non è stato possibile generare il file. Prova con un altro browser.';
+                    errorBox.hidden = false;
+                    console.error(err);
+                }
+            }
+
+            // Eventi
+            let rafId = null;
+            nameInput.addEventListener('input', () => {
+                updateState();
+                if (rafId) cancelAnimationFrame(rafId);
+                rafId = requestAnimationFrame(render);
+            });
+
+            document.querySelectorAll('input[name="format"]').forEach(radio => {
+                radio.addEventListener('change', e => {
+                    currentFormat = e.target.value;
+                    render();
+                });
+            });
+
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                download();
+            });
+
+            // Avvio: attende i font prima di disegnare, così il canvas usa quelli corretti
+            const fontsReady = document.fonts
+                ? Promise.all([
+                    document.fonts.load(`400 100px "Great Vibes"`),
+                    document.fonts.load(`500 30px "Montserrat"`),
+                    document.fonts.load(`700 30px "Montserrat"`)
+                ]).catch(() => null)
+                : Promise.resolve();
+
+            fontsReady.then(() => {
+                updateState();
+                render();
+                loadImage('mobile'); // precarica il secondo sfondo
+            });
+        })();
+    </script>
+</body>
+
+</html>
